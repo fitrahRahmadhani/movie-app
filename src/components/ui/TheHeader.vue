@@ -4,9 +4,9 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <header class="w-full bg-[#121317B8]">
+  <header class="w-full bg-[#121317B8] fixed top-0 z-10">
     <div
-      class="mx-auto grid w-full max-w-360 grid-cols-1 items-center gap-4 px-4 py-4 sm:grid-cols-[auto_1fr] sm:px-6 lg:min-h-20 lg:grid-cols-[auto_1fr_auto] lg:gap-6 lg:py-0"
+      class="mx-auto grid w-full max-w-[1920px] grid-cols-1 items-center gap-4 px-8 py-4 sm:grid-cols-[auto_1fr] lg:px-20 lg:min-h-20 lg:grid-cols-[auto_1fr_auto] lg:gap-6 lg:py-0"
     >
       <h1 class="shrink-0 font-bebas text-4xl text-white sm:text-5xl">CINESTAR</h1>
       <nav
