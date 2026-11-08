@@ -16,4 +16,10 @@ export const movieApi = {
     })
     return res.data
   },
+  async getTrandingMovies() {
+    const res = await api.get('/trending/all/day', {
+      params: { language: 'en-US' },
+    })
+    return res.data
+  },
 }
