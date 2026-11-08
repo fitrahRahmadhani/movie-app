@@ -6,7 +6,7 @@ export function tmdbImage(path, size = 'w500') {
 }
 
 export function formatYear(date) {
-  return date.slice(0, 4)
+  return date ? date.slice(0, 4) : ''
 }
 
 export function formatImdb(vote) {
