@@ -22,4 +22,10 @@ export const movieApi = {
     })
     return res.data
   },
+  async getTopRatedMovies() {
+    const res = await api.get('/movie/top_rated', {
+      params: { language: 'en-US', page: 1 },
+    })
+    return res.data
+  },
 }

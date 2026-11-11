@@ -50,7 +50,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section class="mx-auto flex w-full max-w-[1920px] flex-col py-12">
+  <section class="mx-auto flex w-full max-w-[1920px] flex-col py-6">
     <div class="relative z-10 flex items-center justify-between px-8 lg:px-20">
       <div class="flex items-center gap-2">
         <div class="h-10 w-2 rounded-2xl bg-primary"></div>
