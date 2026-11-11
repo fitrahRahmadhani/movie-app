@@ -9,11 +9,13 @@ import { onMounted, ref } from 'vue'
 
 const nowPlayingMovies = ref([])
 const trendingMovies = ref([])
+const topRatedMovies = ref([])
 
 onMounted(async () => {
-  const [nowPlaying, trending] = await Promise.allSettled([
+  const [nowPlaying, trending, topRated] = await Promise.allSettled([
     movieApi.getNowPlaying(),
     movieApi.getTrandingMovies(),
+    movieApi.getTopRatedMovies(),
   ])
 
   if (nowPlaying.status === 'fulfilled') {
@@ -26,6 +28,10 @@ onMounted(async () => {
     trendingMovies.value = trending.value.results.filter((m) => m.poster_path)
   } else {
     console.error(trending.reason)
+  }
+
+  if (topRated.status === 'fulfilled') {
+    topRatedMovies.value = topRated.value.results.filter((m) => m.poster_path)
   }
 })
 </script>
@@ -83,6 +89,7 @@ onMounted(async () => {
       </template>
     </AppCarousel>
 
-    <MovieSlider v-if="trendingMovies.length" title="Sedang populer" :movies="trendingMovies" />
+    <MovieSlider v-if="trendingMovies.length" title="Sedang Populer" :movies="trendingMovies" />
+    <MovieSlider v-if="topRatedMovies.length" title="Top Rated" :movies="topRatedMovies" />
   </DefaultLayout>
 </template>
